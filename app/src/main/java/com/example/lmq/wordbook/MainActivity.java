@@ -1,22 +1,22 @@
 package com.example.lmq.wordbook;
 
-        import android.content.ContentValues;
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.content.res.Configuration;
-        import android.app.AlertDialog;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.net.Uri;
-        import android.os.Bundle;
-        import android.support.design.widget.FloatingActionButton;
-        import android.support.v7.app.AppCompatActivity;
-        import android.support.v7.widget.Toolbar;
-        import android.util.Log;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.EditText;
-        import android.widget.TableLayout;
+import android.content.ContentValues;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.app.AlertDialog;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TableLayout;
 
 public class MainActivity extends AppCompatActivity implements WordItemFragment.OnFragmentInteractionListener,
         WordDetailFragment.OnFragmentInteractionListener {
@@ -126,8 +126,15 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                 M2Activity();
                 return true;
             case R.id.action_news:
-                Intent intent3 = new Intent(MainActivity.this,EnglishWeb.class);
-                startActivity(intent3);
+                Intent intent2 = new Intent(Intent.ACTION_VIEW);
+                intent2.setData(Uri.parse("http://english.sina.com"));
+                startActivity(intent2);
+                //Intent intent3 = new Intent(MainActivity.this,EnglishWeb.class);
+                //startActivity(intent3);
+                return true;
+            case R.id.action_help:
+                Intent intent = new Intent(MainActivity.this,WordHelp.class);
+                startActivity(intent);
                 return true;
         }
 
